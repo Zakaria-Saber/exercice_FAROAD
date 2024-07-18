@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import ChargingPoint from '../models/chargingPoint';
 
-const generateId = (): string => {
+export const generateId = (): string => {
     const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ123456789';
     let result = '';
     for (let i = 0; i < 5; i++) {

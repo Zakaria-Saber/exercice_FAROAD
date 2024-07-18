@@ -12,7 +12,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.createChargingPoint = void 0;
+exports.createChargingPoint = exports.generateId = void 0;
 const chargingPoint_1 = __importDefault(require("../models/chargingPoint"));
 const generateId = () => {
     const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ123456789';
@@ -22,10 +22,11 @@ const generateId = () => {
     }
     return result;
 };
+exports.generateId = generateId;
 const createChargingPoint = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     try {
         const { name, location } = req.body;
-        const id = generateId();
+        const id = (0, exports.generateId)();
         const chargingPoint = yield chargingPoint_1.default.create({ id, name, location });
         res.status(201).json(chargingPoint);
     }

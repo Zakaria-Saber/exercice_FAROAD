@@ -2,10 +2,8 @@ import express, {Request, Response} from 'express';
 import bodyParser from 'body-parser';
 // import chargingPointRoots from './roots/root';
 import sequelize from './config/database';
-import {createChargingPoint} from './controller/chargingPointController';
+import { createChargingPoint, generateId} from './controller/chargingPointController';
 import ChargingPoint from './models/chargingPoint';
-
-
 
 const app = express();
 const port: number = 3000;
@@ -31,25 +29,7 @@ sequelize.authenticate()
 
   });
 
-// import axios from 'axios';
 
-// const run = async () => {
-// const url = 'http://localhost:3000/chargingPoint/create'; // Remplacez par l'URL de votre API
-// const data = {
-//   name: 'Bureau A',
-//   location: 'bureaux'
-// };
-
-// try {
-//   const response = await axios.post(url, data);
-//   console.log('Point de charge créé:', response.data);
-// } catch (error) {
-//   console.error('Erreur lors de la création du point de charge:');
-// }
-// };
-
-// run();
-
-const test = ChargingPoint.build({id: "1a75s", name:"testot", location:"bureaux"})
+const test = ChargingPoint.build({id: generateId(),name:"gnuehng", location:"domicile"})
 test.save();
 export default app;

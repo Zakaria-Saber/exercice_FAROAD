@@ -27,21 +27,6 @@ database_1.default.authenticate()
     .catch((err) => {
     console.error('Failed to synchronize database:', err);
 });
-// import axios from 'axios';
-// const run = async () => {
-// const url = 'http://localhost:3000/chargingPoint/create'; // Remplacez par l'URL de votre API
-// const data = {
-//   name: 'Bureau A',
-//   location: 'bureaux'
-// };
-// try {
-//   const response = await axios.post(url, data);
-//   console.log('Point de charge créé:', response.data);
-// } catch (error) {
-//   console.error('Erreur lors de la création du point de charge:');
-// }
-// };
-// run();
-const test = chargingPoint_1.default.build({ id: "1a75s", name: "testot", location: "bureaux" });
+const test = chargingPoint_1.default.build({ id: (0, chargingPointController_1.generateId)(), name: "gnuehng", location: "domicile" });
 test.save();
 exports.default = app;
