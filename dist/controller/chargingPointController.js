@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.createChargingPoint = exports.generateId = void 0;
 const chargingPoint_1 = __importDefault(require("../models/chargingPoint"));
+// Function to generate a random ID
 const generateId = () => {
     const chars = 'ABCDEFGHJKLMNPQRSTUVWXYZ123456789';
     let result = '';
@@ -27,7 +28,8 @@ const createChargingPoint = (req, res) => __awaiter(void 0, void 0, void 0, func
     try {
         const { name, location } = req.body;
         const id = (0, exports.generateId)();
-        const chargingPoint = yield chargingPoint_1.default.create({ id, name, location });
+        const chargingPoint = chargingPoint_1.default.build({ id, name, location });
+        chargingPoint.save();
         res.status(201).json(chargingPoint);
     }
     catch (error) {
