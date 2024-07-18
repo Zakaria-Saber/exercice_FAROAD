@@ -4,6 +4,6 @@ const sequelize_1 = require("sequelize");
 const sequelize = new sequelize_1.Sequelize('faroad', 'postgres', 'root', {
     host: 'localhost',
     dialect: 'postgres',
-    port: 3000
+    port: 3000,
 });
 exports.default = sequelize;

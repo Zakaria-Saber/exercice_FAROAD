@@ -15,7 +15,7 @@ ChargingPoint.init({
         allowNull: false,
     },
     name: {
-        type: sequelize_1.DataTypes.STRING,
+        type: sequelize_1.DataTypes.STRING(15),
         allowNull: false,
     },
     location: {
@@ -23,7 +23,7 @@ ChargingPoint.init({
         allowNull: false,
     },
 }, {
-    tableName: 'ChargingPoint',
+    tableName: 'chargingpoint',
     sequelize: database_1.default,
 });
 exports.default = ChargingPoint;

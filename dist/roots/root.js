@@ -1,31 +1,11 @@
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const express_1 = require("express");
-const router = (0, express_1.Router)();
-// GET - chargingPoint
-router.get('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    // TO DO
-    const result = [];
-    res.status(200).json({ chargingPoint: result });
-}));
-// GET - chargingPoint/:id
-router.get('/:id', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    // TO DO
-    const result = '';
-    res.status(200).json({ chargingPoint: result });
-}));
-// POST - chargingPoint
-router.post('/', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    // TO DO
-    res.status(201).json({ chargingPoint: {} });
-}));
-exports.default = router;
+// import { Router, Request, Response } from 'express';
+// import createChargingPoint from '../controller/chargingPointController';
+// const router = Router();
+// // // GET - chargingPoint
+// router.get('/', async (req: Request, res: Response) => {
+//   const result : string[] = [];
+//   res.status(200).json({ chargingPoint: result });
+// });
+// router.post('/', createChargingPoint);
+// export default router;

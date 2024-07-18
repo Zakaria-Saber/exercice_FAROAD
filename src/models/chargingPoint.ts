@@ -1,7 +1,6 @@
 import { DataTypes, Model, Optional } from 'sequelize';
 import sequelize from '../config/database';
 
-// Interface for attributes
 type ChargingPointAttributes = {
   id: string;
   name: string;
@@ -25,7 +24,7 @@ ChargingPoint.init({
     allowNull: false,
   },
   name: {
-    type: DataTypes.STRING,
+    type: DataTypes.STRING(15),
     allowNull: false,
   },
   location: {
@@ -33,7 +32,7 @@ ChargingPoint.init({
     allowNull: false,
   },
 }, {
-    tableName: 'ChargingPoint',
+    tableName: 'chargingpoint',
     sequelize,
 });
 
