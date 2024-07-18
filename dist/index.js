@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const body_parser_1 = __importDefault(require("body-parser"));
 const root_1 = __importDefault(require("./roots/root"));
+const database_1 = __importDefault(require("./config/database"));
 const app = (0, express_1.default)();
 const port = 3000;
 app.use(body_parser_1.default.json());
@@ -16,3 +17,12 @@ app.get('/', (req, res) => {
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`);
 });
+database_1.default.authenticate()
+    .then(() => {
+    // console.log('Database synchronized...');
+    console.log('Connection has been established successfully.');
+})
+    .catch((err) => {
+    console.error('Failed to synchronize database:', err);
+});
+exports.default = app;

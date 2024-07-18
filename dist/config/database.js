@@ -1,11 +1,9 @@
 "use strict";
-// import { Sequelize } from "sequelize";
-// const sequelize = new Sequelize({
-//     dialect: "postgres",
-//     database: "faroad",
-//     user: "Zakaria",
-//     password: "a1e90edc",
-//     host: "localhost",
-//     port: 3000,
-//     ssl: true
-// })
+Object.defineProperty(exports, "__esModule", { value: true });
+const sequelize_1 = require("sequelize");
+const sequelize = new sequelize_1.Sequelize('faroad', 'postgres', 'root', {
+    host: 'localhost',
+    dialect: 'postgres',
+    port: 3000
+});
+exports.default = sequelize;
