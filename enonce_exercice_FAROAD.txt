@@ -14,6 +14,6 @@ L'objectif est de mettre en place un appel API pour créer un point de charge. C
 * Generer l'identifiant unique automatiqument du point de charge (doit etre composer de 5 charateres aphanumeric sans utiliser 0 et O)
 
 ## Spécifications techniques
-* Langage de programmation: Node.js/TypeScript
+* Langage de programmation: Node.js/TypeScript 
 * Framework: Express.js
 * Base de données: PostgreSQL
